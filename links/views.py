@@ -5,27 +5,27 @@ from .models import Link
 
 # Create your views here.
 class PostListApi(generics.ListAPIView):
-    queryset = Link.objects.all()
+    queryset = Link.objects.filter(active=True)
     serializer_class = LinkSerializer
 
 
 class PostCreateApi(generics.CreateAPIView):
-    queryset = Link.objects.all()
+    queryset = Link.objects.filter(active=True)
     serializer_class = LinkSerializer
 
 
 class PostDetailApi(generics.RetrieveAPIView):
-    queryset = Link.objects.all()
+    queryset = Link.objects.filter(active=True)
     serializer_class = LinkSerializer
 
 
 class PostUpdateApi(generics.UpdateAPIView):
-    queryset = Link.objects.all()
+    queryset = Link.objects.filter(active=True)
     serializer_class = LinkSerializer
 
 
 class PostDeleteApi(generics.DestroyAPIView):
-    queryset = Link.objects.all()
+    queryset = Link.objects.filter(active=True)
     serializer_class = LinkSerializer
 
 
